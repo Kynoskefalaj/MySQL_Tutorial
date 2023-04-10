@@ -1,0 +1,9 @@
+USE books;
+
+SELECT author, title FROM books
+INTO OUTFILE 'filetest.csv'
+CHARACTER SET utf8
+FIELDS TERMINATED BY ';'
+ENCLOSED BY '"'
+LINES TERMINATED BY '\r\n';
+

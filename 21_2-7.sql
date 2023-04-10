@@ -1,3 +1,6 @@
+USE fastest_animals;
+DROP TABLE fastest;
+
 CREATE TABLE fastest
 (
     animal CHAR(30),
