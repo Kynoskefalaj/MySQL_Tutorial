@@ -1,0 +1,44 @@
+USE books;
+
+SELECT DATEDIFF(NOW(), '1994-08-19');
+
+SELECT DATE_ADD(NOW(), INTERVAL 100 DAY);
+
+SELECT DATE_ADD(NOW(), INTERVAL 23 YEAR);
+
+SELECT DATE_ADD(NOW(), INTERVAL 100 MINUTE);
+
+SELECT DATE_SUB(NOW(), INTERVAL 100 DAY);
+
+SELECT DATE_SUB(NOW(), INTERVAL 23 YEAR);
+
+SELECT DATE_SUB(NOW(), INTERVAL 100 MINUTE);
+
+SELECT TIMESTAMP('2010-05-01');
+
+SELECT TIMESTAMP(now());
+
+CREATE TABLE comments
+(
+	body VARCHAR(250),
+    insert_date TIMESTAMP DEFAULT NOW()
+);
+
+INSERT INTO comments(body) VALUES ('TREŚĆ KOMENTARZA!!!');
+
+SELECT * FROM comments;
+
+UPDATE comments SET body = 'Nooo może niezbyt' WHERE body = 'TREŚĆ KOMENTARZA!!!';
+
+INSERT INTO comments(body) VALUES ('Super partia!!!');
+
+CREATE TABLE comments2
+(
+	body VARCHAR(250),
+    insert_date TIMESTAMP DEFAULT NOW() ON UPDATE CURRENT_TIMESTAMP
+);
+
+INSERT INTO comments2(body) VALUES ('TREŚĆ KOMENTARZA!!!');
+UPDATE comments2 SET body = 'Nooo może niezbyt' WHERE body = 'TREŚĆ KOMENTARZA!!!';
+
+SELECT * FROM comments2;

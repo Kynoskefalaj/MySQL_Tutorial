@@ -15,10 +15,10 @@ DESC books;
 
 SELECT 
 	author,
-    SUM(rating_no) AS "ilość ocen"
+    SUM(revievs_no) AS "ilość ocen"
 FROM books
 GROUP BY author
-ORDER BY SUM(rating_no) DESC
+ORDER BY SUM(revievs_no) DESC
 LIMIT 10;
 
 DESC books;
@@ -33,3 +33,65 @@ SELECT
 FROM books
 GROUP BY author
 ORDER BY nazwisko;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+-- -- -- -- -- -- -- 
+
+USE books;
+
+DESC books;
+
+SELECT 
+	author,
+    MIN(publication_year)
+FROM books
+GROUP BY author;
+
+SELECT
+	author,
+    SUM(revievs_no) AS 'liczba komentarzy'
+FROM books
+GROUP BY author
+ORDER BY SUM(revievs_no) DESC
+LIMIT 10;
+    
+SELECT
+	SUBSTRING_INDEX(author, ' ', 1) AS name,
+    SUBSTRING_INDEX(author, ' ', -1) AS surname,
+    ROUND(AVG(one_star), 0) AS OS,
+    ROUND(AVG(five_stars), 0 ) AS FS
+FROM books
+GROUP BY author
+ORDER BY surname;
