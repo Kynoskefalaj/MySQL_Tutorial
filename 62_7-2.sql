@@ -38,4 +38,7 @@ LINES TERMINATED BY '\r\n'
 IGNORE 1 LINES
 (orders_id, books_id);
 
+SELECT * FROM books;
+SELECT * FROM users;
 SELECT * FROM basket;
+SELECT * FROM orders;
