@@ -2,11 +2,12 @@ CREATE DATABASE books;
 
 USE books;
 
-
+DROP TABLE basket;
 DROP TABLE books;
 
 CREATE TABLE books
 (
+	id INT AUTO_INCREMENT PRIMARY KEY,
 	author CHAR(40),
     title VARCHAR(150),
     publication_year INT,
